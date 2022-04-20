@@ -8,10 +8,11 @@ import { ProductService } from '../product.service';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
+  productList:any;
 
   constructor(private service:ProductService,private router:Router) {
     this.service.viewProduct().subscribe(data=>{
-      console.log(data);
+      this.productList=data;
     })
    }
 
