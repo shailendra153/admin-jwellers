@@ -27,9 +27,9 @@
 
         <td>{{item.quantity}}</td>
 
-        <td><button class="btn btn-warning">Edit</button></td>
+        <td><button (click)="updateCategory(productList[i])" class="btn btn-warning">Edit</button></td>
 
-        <td><button class="btn btn-danger">Delete</button></td>
+        <td><button (click)="deleteProduct(item._id,i)" class="btn btn-danger">Delete</button></td>
 
 
     </tr>
