@@ -16,7 +16,8 @@
         <label for="productPrice" class="form-label">productPrice</label>
         <input type="number" name="productPrice" class="form-control" [(ngModel)]="productPrice">
         <label for="description" class="form-label">Description</label>
-        <textarea type="text" name="description" class="form-control" [(ngModel)]="description">
+        <!-- <input type="text" name="description" class="form-control" [(ngModel)]="description"> -->
+        <textarea name="description" class="form-control" cols="30" rows="10" [(ngModel)]="description"></textarea>
         <label for="discount" class="form-label">Discount</label>
         <input type="number" name="discount" class="form-control" [(ngModel)]="discount">
         <label for="quantity" class="form-label">Quantity</label>
