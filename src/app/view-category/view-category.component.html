@@ -1,0 +1,17 @@
+<table class="table">
+    <tr>
+        <th>S.No</th>
+        <th>CategoryName</th>
+        <th>CategoryImage</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let item of categoryList index as i">
+        <td>{{i+1}}</td>
+        <td>{{item.categoryName}}</td>
+        <td><img [src]="item.categoryImage" alt=""></td>
+        <td><button (click)="updateCategory(categoryList[i])" class="btn btn-warning">Edit</button></td>
+        <td><button (click)="deleteCategory(item._id,i)" class="btn btn-danger">Delete</button></td>
+    </tr>
+
+</table>

@@ -1,0 +1,30 @@
+<!-- <div class="form-group"> -->
+<div class="container">
+    <form action="">
+        <div class="form-group ">
+            <select #mySelect class="form-select" name="category" id="category">
+            
+                <option  *ngFor="let item of categoryList" [value]="item._id">{{item.categoryName}}</option>
+                
+                </select>
+        </div>
+
+        <label class="form-label" for="productName">productName</label>
+        <input name="productName" class="form-control" [(ngModel)]="productName" type="text">
+        <label for="productImage" name="productImage" class="form-label">productImage</label>
+        <input (change)="select($event)" class="form-control" type="file">
+        <label for="productPrice" class="form-label">productPrice</label>
+        <input type="number" name="productPrice" class="form-control" [(ngModel)]="productPrice">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" name="description" class="form-control" [(ngModel)]="description">
+        <label for="discount" class="form-label">Discount</label>
+        <input type="number" name="discount" class="form-control" [(ngModel)]="discount">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" name="quantity" class="form-control" [(ngModel)]="quantity">
+        <button (click)="upload()" type="submit" class="btn btn-primary">Add Product</button>
+        <button type="reset" class="btn btn-danger"> Reset</button>
+
+
+    </form>
+</div>
+<!-- </div> -->

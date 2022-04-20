@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+:root {
+    --primary: #0081DE;
+    --secondary: rgb(250, 239, 193);
+    --dark: #1c1c1c;
+    --light: #ffffff;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    /* overflow: hidden; */
+}
+
+body {
+    background: radial-gradient (ellipse at bottom, 3 #022227 0%, #000000 100%);
+    position: relative;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+}
+
+ul li a {
+    font-size: 14px;
+    letter-spacing: 1px;
+}

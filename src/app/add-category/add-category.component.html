@@ -1,0 +1,9 @@
+<div class="form-group">
+    <form action="">
+        <label for="categoryName" class="form-label">CategoryName</label>
+        <input name="categoryName" [(ngModel)]="categoryName" class="form-control" type="text">
+        <label class="form-label" for="categoryImage"></label>
+        <input (change)="select($event)" type="file" name="categoryImage" id="">
+        <button (click)="upload()" class="btn btn-primary ">Save Category</button>
+    </form>
+</div>
