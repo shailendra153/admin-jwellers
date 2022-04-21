@@ -14,7 +14,10 @@ h1 {
     text-align: center;
 }
 
+.cat-name {
+    margin-left: 30%;
+}
 
-/* .cat-name {
-    margin-left: 30px;
-} */
+.cat-name .btn {
+    margin: 10%;
+}
