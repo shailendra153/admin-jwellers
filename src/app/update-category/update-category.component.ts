@@ -35,7 +35,7 @@ export class UpdateCategoryComponent implements OnInit {
     formData.append("categoryId",this.data._id);
     formData.append("oldImage",this.image)
     this.service.updateCategory(formData).subscribe(data =>{
-      if(data.message=="Success"){
+      if(data){
         alert('category update successfully');
         this.router.navigate(['view-category']);
         

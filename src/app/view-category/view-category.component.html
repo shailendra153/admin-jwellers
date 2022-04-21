@@ -1,11 +1,11 @@
 <table class="table">
-    <tr>
+    <thead>
         <th>S.No</th>
         <th>CategoryName</th>
         <th>CategoryImage</th>
         <th>Edit</th>
         <th>Delete</th>
-    </tr>
+    </thead>
     <tr *ngFor="let item of categoryList index as i">
         <td>{{i+1}}</td>
         <td>{{item.categoryName}}</td>

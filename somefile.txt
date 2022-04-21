@@ -1,0 +1,28 @@
+cd ..
+d;
+D;
+d:
+cd shailendra
+cd jwellers-admin
+ng serve
+cls
+ng serve
+cd ..
+cls
+git clone https://github.com/14shubh/userApp.git
+cd userApp
+npm install
+code .
+ng serve
+ 
+cls
+ng serve
+cls
+cd ..
+cd jwellers-admin
+ng serve
+history
+doskey /history 
+cls
+doskey /h > c:\cmd_history.txt
+doskey /history > somefile.txt

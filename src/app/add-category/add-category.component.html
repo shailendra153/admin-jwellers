@@ -1,4 +1,4 @@
-<div class="form-group">
+<!-- <div class="form-group">
     <form action="">
         <label for="categoryName" class="form-label">CategoryName</label>
         <input name="categoryName" [(ngModel)]="categoryName" class="form-control" type="text">
@@ -6,4 +6,20 @@
         <input (change)="select($event)" type="file" name="categoryImage" id="">
         <button (click)="upload()" class="btn btn-primary ">Save Category</button>
     </form>
+</div> -->
+<h1>ADD-CATEGORY</h1>
+<div class="container">
+    <ul class="box-info">
+        <li>
+            <form action="">
+                <div class="cat-name">
+                    <label for="categoryName" class="form-label">CategoryName</label>
+                    <input name="categoryName" [(ngModel)]="categoryName" class="form-control" type="text">
+                </div>
+                <label class="form-label" for="categoryImage"></label>
+                <input (change)="select($event)" type="file" name="categoryImage" id="">
+                <button (click)="upload()" class="btn btn-primary ">Save Category</button>
+            </form>
+        </li>
+    </ul>
 </div>

@@ -1,27 +1,29 @@
-<!-- <div class="form-group"> -->
-<div class="container">
-    <form action="">
-        <label for="categoryId" class="form-label"></label>
-        <input [(ngModel)]="categoryId" name="categoryId" class="form-control" disabled="true" type="text">
-        <label class="form-label" for="">Old Image</label>
-        <div class="form-group"><img [src]="data.productImage" width="80px" height="80px" alt=""></div>
-        <label class="form-label" for="productName">productName</label>
-        <input name="productName" class="form-control" [(ngModel)]="productName" type="text">
-        <label for="productImage" name="productImage" class="form-label">productImage</label>
-        <input (change)="select($event)" class="form-control" type="file">
-        <label for="productPrice" class="form-label">productPrice</label>
-        <input type="number" name="productPrice" class="form-control" [(ngModel)]="productPrice">
-        <label for="description" class="form-label">Description</label>
-        <!-- <input type="text" name="description" class="form-control" [(ngModel)]="description"> -->
-        <textarea name="description" class="form-control" cols="30" rows="10" [(ngModel)]="description"></textarea>
-        <label for="discount" class="form-label">Discount</label>
-        <input type="number" name="discount" class="form-control" [(ngModel)]="discount">
-        <label for="quantity" class="form-label">Quantity</label>
-        <input type="number" name="quantity" class="form-control" [(ngModel)]="quantity">
-        <button (click)="update()" type="submit" class="btn btn-primary">Update Product</button>
-        <button (click)="cancel()" class="btn btn-danger"> Cancel</button>
+<main>
+    <!-- <div class="form-group"> -->
+    <div class="container">
+        <form action="">
+            <label for="categoryId" class="form-label"></label>
+            <input [(ngModel)]="categoryId" name="categoryId" class="form-control" disabled="true" type="text">
+            <label class="form-label" for="">Old Image</label>
+            <div class="form-group"><img [src]="data.productImage" width="80px" height="80px" alt=""></div>
+            <label class="form-label" for="productName">productName</label>
+            <input name="productName" class="form-control" [(ngModel)]="productName" type="text">
+            <label for="productImage" name="productImage" class="form-label">productImage</label>
+            <input (change)="select($event)" class="form-control" type="file">
+            <label for="productPrice" class="form-label">productPrice</label>
+            <input type="number" name="productPrice" class="form-control" [(ngModel)]="productPrice">
+            <label for="description" class="form-label">Description</label>
+            <!-- <input type="text" name="description" class="form-control" [(ngModel)]="description"> -->
+            <textarea name="description" class="form-control" cols="30" rows="10" [(ngModel)]="description"></textarea>
+            <label for="discount" class="form-label">Discount</label>
+            <input type="number" name="discount" class="form-control" [(ngModel)]="discount">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" name="quantity" class="form-control" [(ngModel)]="quantity">
+            <button (click)="update()" type="submit" class="btn btn-primary">Update Product</button>
+            <button (click)="cancel()" class="btn btn-danger"> Cancel</button>
 
 
-    </form>
-</div>
-<!-- </div> -->
+        </form>
+    </div>
+    <!-- </div> -->
+</main>
