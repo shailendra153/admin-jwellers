@@ -7,19 +7,24 @@
         <button (click)="upload()" class="btn btn-primary ">Save Category</button>
     </form>
 </div> -->
-<h1>ADD-CATEGORY</h1>
-<div class="container">
-    <ul class="box-info">
-        <li>
-            <form action="">
-                <div class="cat-name">
-                    <label for="categoryName" class="form-label">CategoryName</label>
-                    <input name="categoryName" [(ngModel)]="categoryName" class="form-control" type="text">
-                </div>
-                <label class="form-label" for="categoryImage"></label>
-                <input (change)="select($event)" type="file" name="categoryImage" id="">
-                <button (click)="upload()" class="btn btn-primary ">Save Category</button>
-            </form>
-        </li>
-    </ul>
+
+<div class="container-fluid">
+    <div class="bg-image">
+        <h1>ADD-CATEGORY</h1>
+
+        <ul class="box-info" style="padding: 0 80px 80px 80px;">
+            <li>
+                <form action="">
+                    <div class="cat-name" style="margin-left: 30px;">
+                        <label for="categoryName" class="form-label">CategoryName</label>
+                        <input name="categoryName" [(ngModel)]="categoryName" class="form-control" type="text">
+                        <label class="form-label" style="margin-top: 10%;" for="categoryImage">Category Image</label>
+                        <input (change)="select($event)" type="file" name="categoryImage" id="">
+                        <a (click)="upload()" class="btn btn-primary" style="margin:10%; ">Save Category</a>
+                    </div>
+
+                </form>
+            </li>
+        </ul>
+    </div>
 </div>
