@@ -24,7 +24,8 @@ export class AddProductComponent implements OnInit {
       console.log(data);
       this.categoryList=data;
     });
-   }public select(event:any){
+   }
+   public select(event:any){
     if(event.target.files.length > 0){
       const file = event.target.files[0];
       this.image = file

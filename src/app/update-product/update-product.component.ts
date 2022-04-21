@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from 'express';
+import { Component, ElementRef,ViewChild, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CategoryService } from '../category.service';
 import { ProductService } from '../product.service';
 import { UpdateDataService } from '../update-data.service';
+
 
 @Component({
   selector: 'app-update-product',
@@ -9,55 +11,69 @@ import { UpdateDataService } from '../update-data.service';
   styleUrls: ['./update-product.component.css']
 })
 export class UpdateProductComponent implements OnInit {
-// data:any;
-// productName:any;
-// oldImage:any;
-// productPrice:any;
-// description:any;
-// categoryId:any;
-// discount:any;
-// quantity:any;
-// image:any;
-//   constructor(private update:UpdateDataService,private productService:ProductService,private route:Router) {
-//       this.data=update.getData();
-//       this.productName=this.data.productName;
-// this.oldImage=this.data.productImage;
-// this.productPrice=this.data.productPrice;
-// this.description=this.data.description;
-// this.discount=this.data.discount;
-// this.quantity=this.data.quantity;
+  
+   data:any; 
+   categoryList:any;
+   productName:any="";
+   productPrice:any="";
+   description:any="";
+   discount:any="";
+   quantity:any="";
+   newImage:any;
+   image:any="";
+   categoryId:any=""
 
+
+   
+  constructor(private updateService:UpdateDataService,private categoryService:CategoryService,private productService:ProductService,private router:Router){
+    this.categoryService.viewCategort().subscribe(data=>{
+      this.categoryList=data;
+      });
+    this.data=this.updateService.getData();
+    this.productName=this.data.productName;
+    this.productPrice=this.data.productPrice;
+    this.description=this.data.description;
+    this.quantity=this.data.quantity;
+    this.discount=this.data.discount;
+    this.image=this.data.productImage;
+    this.categoryId=this.data.categoryId.categoryName;
+     
+
+  }
+  public select(event:any){
+    if(event.target.files.length > 0){
+      const file = event.target.files[0];
+      this.newImage = file
+    }
+  }
+
+  public update(){
+    let formData = new FormData();
+    formData.append("productName",this.productName);
+    formData.append("productImage",this.newImage);
+    formData.append("oldImage",this.image);
+    formData.append("productId",this.data._id);
+    formData.append("productPrice",this.productPrice);
+    formData.append("description",this.description);
+    formData.append("discount",this.discount);
+    formData.append("quantity",this.quantity);
+    formData.append("categoryId",this.data.categoryId._id);
+    this.productService.updateProduct(formData).subscribe(data=>{
+    if(data){
+      alert('product update successfully');
+      this.router.navigate(['view-product']);
       
-//    }
-//    public select(event:any){
-//     if(event.target.files.length > 0){
-//       const file = event.target.files[0];
-//       this.image = file
-//     }
-//   }
+    }else{
+      alert('category not update');
+    }
+  },err=>{
+    alert("Kindly Update product Details");
+  })
 
-//   public upload(){
-    
-    
-//     let formData = new FormData;
-//     formData.append("productName",this.productName);
-//     formData.append("productImage",this.image);
-//     formData.append("productPrice",this.productPrice);
-//     formData.append("description",this.description);
-//     formData.append("categoryId",this.categoryId?.nativeElement.value);
-//     if(this.discount)
-//     formData.append("discount",this.discount);
-//     if(this.quantity)
-//     formData.append("quantity",this.quantity);
-//     this.productService.addProduct(formData).subscribe(data =>{
-//       if(data){
-//         alert('Product added successfully');
-//       }else{
-//         alert('Product not added');
-//       }
-//     })
-
-//   }
+  }
+  cancel(){
+    this.router.navigate(['view-product']);
+  }
 
 
   ngOnInit(): void {
